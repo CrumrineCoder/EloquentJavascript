@@ -1,6 +1,6 @@
 Min
 
-function min (x1,x2) { 
+	function min (x1,x2) { 
 			if(x1>x2){
 				return x2; 
 			}		
@@ -16,7 +16,7 @@ function min (x1,x2) {
 
 Recursion
 
-function isEven(number){
+	function isEven(number){
 			if(number == 0){
 				return "even"; 
 			}
@@ -34,3 +34,27 @@ function isEven(number){
 		alert(isEven(-3)); 
 		alert(isEven(13)); 
 		alert(isEven(12)); 
+Bean Counting 
+
+	function amountOfBs(string){
+			var B = 0; 
+			for(var i = 0; i<string.length; i++){
+				if(string.charAt(i) == "B"){
+					B++; 
+				}
+			}
+			return B; 
+		}
+		alert(amountOfBs("BBBABAAAB")); 
+		
+		
+	function amountOfBs(string, charToFind){
+		var amountOfChar = 0; 
+			for(var i = 0; i<string.length; i++){
+				if(string.charAt(i) == charToFind){
+					amountOfChar++; 
+				}
+			}
+			return amountOfChar; 
+		}
+		alert(amountOfBs("BBBABAAAB", "B")); 
