@@ -13,3 +13,24 @@ function min (x1,x2) {
 		} 
 		
 		alert(min(1,2));
+
+Recursion
+
+function isEven(number){
+			if(number == 0){
+				return "even"; 
+			}
+			else if(number ==1){
+				return "odd"; 
+			}
+			else if(number < 0 ){
+				return null; 
+			}
+			else{
+				return isEven(number-2); 
+			}
+		
+		}
+		alert(isEven(-3)); 
+		alert(isEven(13)); 
+		alert(isEven(12)); 
