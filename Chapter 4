@@ -1,21 +1,57 @@
 Range
 
-  function range(start, end){
-			var ranger = []; 
-			for(var i=start; i<=end; i++){
-				ranger.push(i); 
-			}
-			return ranger; 
+ 	function range(start, end){
+		var ranger = []; 
+		for(var i=start; i<=end; i++){
+			ranger.push(i); 
 		}
-		alert(range(1,10)); 
-  
-Sum
+		return ranger; 
+	}
+	alert(range(1,10)); 
 
-  function sum(arr){
-			var sum = 0; 
-			for(var i=0; i<arr.length; i++){
-				sum += arr[i]; 
-			}
-			return sum; 
+	function sum(arr){
+		var sum = 0; 
+		for(var i=0; i<arr.length; i++){
+			sum += arr[i]; 
 		}
-		alert(sum(range(1,10))); 
+		return sum; 
+	}
+	alert(sum(range(1,10))); 
+		
+	Bonus Assignment: Range
+
+	function range(start, end, increment){
+		var increase=1;
+		if(increment!=undefined){
+			increase = increment; 
+		}
+		var ranger = []; 
+		for(var i=start; i<=end; i+=increase){
+			ranger.push(i); 
+		}
+		return ranger; 
+	}
+	alert(range(1,10,3));
+	
+Reverse an Array
+	 function reverseArray(incArray){
+		var newArray = []; 
+		for(var i=incArray.length-1; i>=0; i--){
+				newArray.push(incArray[i]); 
+		}
+		return newArray; 
+	}
+	alert(reverseArray([100, 10, 3, 28, 1, 290])); 
+	
+	function reverseArrayInPlace(incArray){
+		var newArray = []; 
+		for(var i=incArray.length-1; i>=0; i--){
+				newArray.push(incArray[i]); 
+		}
+		arr = newArray; 
+	}
+	var arr = [100, 10, 3, 28, 1, 290];
+	reverseArrayInPlace(arr); 
+	alert(arr); 
+  
+	
