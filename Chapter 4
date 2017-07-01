@@ -1,0 +1,21 @@
+Range
+
+  function range(start, end){
+			var ranger = []; 
+			for(var i=start; i<=end; i++){
+				ranger.push(i); 
+			}
+			return ranger; 
+		}
+		alert(range(1,10)); 
+  
+Sum
+
+  function sum(arr){
+			var sum = 0; 
+			for(var i=0; i<arr.length; i++){
+				sum += arr[i]; 
+			}
+			return sum; 
+		}
+		alert(sum(range(1,10))); 
