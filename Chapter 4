@@ -122,4 +122,21 @@ Reverse an Array
 	}; 
 	list = prepend("zoo", list); 
 	alert(list.value);
+  nth
+  	function nth(number, list){
+		var counter = 0; 
+		function countoMajesto(number, list){
+			if(list.value == number){
+				return counter;  
+			}
+			else if(list.rest == null){
+				return undefined; 
+			}
+			counter++; 
+			return countoMajesto(number, list.rest); 	
+		}		
+		return countoMajesto(number, list); 	
+	}
+
+	 alert(nth(2, list));
 
