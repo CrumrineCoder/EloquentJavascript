@@ -103,4 +103,23 @@ Reverse an Array
 	var arr = listToArray(list); 
 
 	alert(arr[2]); 
-	
+  prepend 
+  	function prepend(element, incList){
+		var newList = {};
+		newList.value = element; 
+		newList.rest = incList; 
+		return newList; 
+	}
+	var list = {
+		value: 1, 
+		rest: {
+			value: 2, 
+			rest:{
+				value: 3, 
+				rest: null
+			}
+		}
+	}; 
+	list = prepend("zoo", list); 
+	alert(list.value);
+
