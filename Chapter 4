@@ -54,4 +54,53 @@ Reverse an Array
 	reverseArrayInPlace(arr); 
 	alert(arr); 
   
+  List
+  
+    array to list
+  	function arrayToList(incArray){
+		if(incArray.length == 0){
+			return null; 
+		}
+		var value  = incArray.shift(); 
+
+		return{
+			value: value,
+			rest: arrayToList(incArray) 
+		}
+	}
+	var list = arrayToList([1,2,3]); 
+	alert(list.value); 
+	
+   list to array
+	function listToArray(incList){
+		var arr = [];
+		var counter = 0; 
+		while (incList.rest != null){
+			arr[counter] = incList.value; 
+			incList = incList.rest; 
+			counter++; 
+		}
+
+		arr[counter] = incList.value; 
+		incList = incList.rest; 
+
+		return arr; 
+	}
+
+	function arrayToList(incArray){
+		if(incArray.length == 0){
+			return null; 
+		}
+		var value  = incArray.shift(); 
+
+		return{
+			value: value,
+			rest: arrayToList(incArray) 
+		}
+	}
+	var list = arrayToList([1,2,3]); 
+
+	var arr = listToArray(list); 
+
+	alert(arr[2]); 
 	
