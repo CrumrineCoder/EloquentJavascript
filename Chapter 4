@@ -139,4 +139,56 @@ Reverse an Array
 	}
 
 	 alert(nth(2, list));
+	 
+deep comparison
+
+	function deepEqual(value1, value2){
+		if( ((typeof value1 !== 'object') || (value1 == null)) || ((typeof value2 !== 'object') || (value2 == null)) ){
+			return "Not comparable for this function"; 
+		}
+
+		function deepEqualRecursion(value1, value2){
+
+			if( (value1.rest==null || value2.rest== null) && !(value1.rest==null && value2.rest==null)){
+				return "Not Equal"; 
+			}
+			else if(value1.rest == null && value2.rest == null){
+				return "Equal"; 
+			}
+			else if(value1.value == value2.value){
+				return deepEqualRecursion(value1.rest, value2.rest); 
+			}
+			else{
+				return "Not Equal"; 
+			}
+		}
+		return deepEqualRecursion(value1, value2);
+	}
+
+	var list1 = {
+		value: 1, 
+		rest: {
+			value: 2, 
+			rest: {
+				value: 3, 
+				rest: null 
+			}
+		}
+	};
+
+	var list2 = {
+		value: 1, 
+		rest: {
+			value: 2, 
+			rest: {
+				value: 3, 
+				rest: {
+					value: 4, 
+					rest: null
+				}
+			}
+		}
+	};
+	var nooo = null; 
+  alert(deepEqual(list1, list2));
 
