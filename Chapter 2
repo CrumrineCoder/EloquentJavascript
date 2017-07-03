@@ -36,7 +36,7 @@ var size = Number(prompt("What is the size of the board you request?", ""));
 					else{
 						board += " "; 
 					}
-				}
+				} 
 				board += "\n"; 
 			}
 			console.log(board); 
