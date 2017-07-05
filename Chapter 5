@@ -6,9 +6,9 @@ Flattening
   	return finishedArray.concat(currentArray)
   })); 
 
--in Progress- Mother and Child age difference
+Mother and Child age difference completed!
 
-var ANCESTRY_FILE = JSON.stringify([
+  var ANCESTRY_FILE = JSON.stringify([
   {"name": "Carolus Haverbeke", "sex": "m", "born": 1832, "died": 1905, "father": "Carel Haverbeke", "mother": "Maria van Brussel"},
   {"name": "Emma de Milliano", "sex": "f", "born": 1876, "died": 1956, "father": "Petrus de Milliano", "mother": "Sophia van Damme"},
   {"name": "Maria de Rycke", "sex": "f", "born": 1683, "died": 1724, "father": "Frederik de Rycke", "mother": "Laurentia van Vlaenderen"},
@@ -56,41 +56,18 @@ var ANCESTRY_FILE = JSON.stringify([
 		return person.mother != null; 
 	})
 	
-	//alert(ancestryFiltered.length); 
-	
-	/*function average(array){
-		function plus (a,b){ 
-			return a + b; 
-		}
-		return array.reduce(plus)/array.length;
-	}
-	*/
-	
 	var byName = {};
-	ancestry.forEach(function(person){
+	ancestryFiltered.forEach(function(person){
 		byName[person.name]=person;
 	});
 	
-	console.log( byName[ancestryFiltered[0].mother].born); 
 	var sum = 0; 
+	var counter = 0; 
 	for(var i=0; i<ancestryFiltered.length-1; i++){
-		//sum += ((ancestryFiltered[i].born)-(byName[ancestryFiltered[i].mother].born)); 
-		// console.log( ancestryFiltered[i].born );
-		if(ancestry[i].mother != null){
-			console.log(byName[ancestry[i]].name);
-		}		
-		//console.log((ancestryFiltered[i].born)-(byName[ancestryFiltered[i].mother].born));
+		if(ancestryFiltered.indexOf(byName[ancestryFiltered[i].mother]) != -1){
+			sum+=(ancestryFiltered[i].born)-(byName[ancestryFiltered[i].mother].born);
+			counter++; 
+		}
 	}
-	//sum = sum / ancestryFiltered.length; 
-	//alert(sum); 
-	
-	
-	//alert(average(ancestryFiltered.map((byName["Philibert Haverbeke"].born)-(byName[byName["Philibert Haverbeke"].mother].born))));
-	
-	
-	
-	
-	
-	
-	//console.log((byName["Philibert Haverbeke"].born)-(byName[byName["Philibert Haverbeke"].mother].born));
-	//alert(average(ancestryFiltered.map(this."mother"."born" - this."born"))); 
+	alert("The average birthing age within the data set is: " + (sum / counter)); 
+  
