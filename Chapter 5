@@ -159,3 +159,37 @@ Mother and Child age difference completed!
 	
 	console.log("The Average Lifespan of the 20th century individuals in this data set are: " + average(twentiethCentury.map(function (p) {return p.died - p.born} ))); 
 	
+Every and then some
+
+	var test = [
+		{"name": "Carl", "born": 1914},
+		{"name": "Whoton", "born": 1833}
+		]; 
+	
+	function every(incArray){
+		var newArr = incArray.filter(function (person){
+			return person . born > 1900 && person . born < 1925;
+		}); 
+		if (newArr.length == incArray.length){
+			return true; 
+		}
+		else{
+			return false; 
+		}
+
+	}
+
+	function some(incArray){
+		var newArr = incArray.filter(function (person){
+			return person . born > 1900 && person . born < 1925;
+		});
+		if (newArr.length >= 1){
+			return true; 
+		}
+		else{
+			return false; 
+		}
+	}
+
+	alert(some(test)); 
+	alert(every(test)); 
